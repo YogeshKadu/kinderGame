@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./_components/Navbar";
+import Tenzie from "./_components/Tenzie";
+import Home from "./_components/Home";
 
 function App() {
+
+  const [navComp,setNavComp]=React.useState([
+    {path:"/",title:"Home",default:true},
+    {path:"/tenzie",title:"Tenzie",default:false},
+  ])
+  // function addNavigation(newNav){
+  //   setNavComp(oldnav=>oldnav.push(newNav));
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-cyan-900 -z-50">
+      <Router>
+        <Navbar links={navComp} />
+        <Switch>
+          <Route path="/tenzie">
+            <Tenzie />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

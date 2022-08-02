@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">kinder-games</string>
+    <string name="title_activity_main">kinder-games</string>
+    <string name="package_name">com.xscientist.in</string>
+    <string name="custom_url_scheme">com.xscientist.in</string>
+</resources>
